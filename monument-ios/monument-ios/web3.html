@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <script src="web3.js"></script>
+        <script>
+            var web3 = new Web3();
+            web3.setProvider(new web3.providers.HttpProvider("http://192.168.0.20:8545"));
+            
+            var account = web3.eth.accounts[0];
+            web3.eth.defaultAccount = account;
+            
+            var accountObject = {
+                from: account,
+                gas: 300000,
+            };
+        
+            var abi = [{"constant":false,"inputs":[{"name":"ipfsHash","type":"string"},{"name":"title","type":"string"},{"name":"description","type":"string"},{"name":"tags","type":"string"},{"name":"countryId","type":"uint8"}],"name":"createReport","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"index","type":"uint256"}],"name":"getReport","outputs":[{"name":"ipfsHash","type":"string"},{"name":"title","type":"string"},{"name":"description","type":"string"},{"name":"tags","type":"string"},{"name":"likes","type":"uint256"},{"name":"dislikes","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"searchQuery","type":"string"}],"name":"searchReport","outputs":[{"name":"","type":"uint256[]"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getReportCount","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"}];
+            
+            var reportManagerContract = web3.eth.contract(abi);
+            var reportManagerContractInstance = reportManagerContract.at('0xec46bc4b4e54a924b40726f1b918844b4b5a9fad');
+            var reportCount = reportManagerContractInstance.getReportCount().valueOf()
+            
+            function isConnectedToEthereumNode() {
+                return web3.isConnected()
+            }
+            
+            function createReport(hash, description) {
+                // TODO: For now we are only sending IPFS hash and description. In future this will include
+                // more meta data like title, tags, etc.
+                reportManagerContractInstance.createReport.sendTransaction(hash, "", description, "", 0, accountObject);
+            }
+        
+            function listReports() {
+                var reports = []
+                
+                for (reportIndex = reportCount - 1; reportIndex >= 0; reportIndex--) {
+                    var report = reportManagerContractInstance.getReport(reportIndex)
+                    reports.push(report)
+                }
+                
+                return reports
+            }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

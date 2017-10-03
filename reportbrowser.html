@@ -1,0 +1,135 @@
+<html>
+    <head>
+        <title>MONUMENT</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="https://wzrd.in/standalone/buffer"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://unpkg.com/ipfs-api/dist/index.js"></script>
+        <script src="web3.min.js"></script>
+        <script>
+            // Ethereum configuration
+            var web3Host = 'http://192.168.0.20';
+            var web3Port = '8545';
+
+            // IPFS configuration
+            var ipfsHost    = '192.168.0.20';
+            var ipfsAPIPort = '5001';
+            var ipfsWebPort = '8080';
+
+            // Ethereum setup
+            var web3 = new Web3();
+
+            web3.setProvider(new web3.providers.HttpProvider(web3Host + ':' + web3Port));
+
+            if (!web3.isConnected()) {
+                console.error("Ethereum - No conection to RPC server.");
+            } else {
+                console.log("Ethereum - Connected to RPC server.");
+            }
+            
+            var account = web3.eth.accounts[0];
+            web3.eth.defaultAccount = account;
+
+            var accountObject = {
+                from: account,
+                gas: 300000,
+            };
+
+            var abi = [{"constant":false,"inputs":[{"name":"ipfsHash","type":"string"},{"name":"title","type":"string"},{"name":"description","type":"string"},{"name":"tags","type":"string"},{"name":"countryId","type":"uint8"}],"name":"createReport","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"index","type":"uint256"}],"name":"getReport","outputs":[{"name":"ipfsHash","type":"string"},{"name":"title","type":"string"},{"name":"description","type":"string"},{"name":"tags","type":"string"},{"name":"likes","type":"uint256"},{"name":"dislikes","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"searchQuery","type":"string"}],"name":"searchReport","outputs":[{"name":"","type":"uint256[]"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getReportCount","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"}];
+            var reportManagerContract = web3.eth.contract(abi);
+            var reportManagerContractInstance = reportManagerContract.at('0xec46bc4b4e54a924b40726f1b918844b4b5a9fad');
+            var reportCount = reportManagerContractInstance.getReportCount().valueOf();
+
+            console.log("Current report count: " + reportCount);
+
+            // IPFS setup
+            var ipfs = window.IpfsApi(ipfsHost, ipfsAPIPort)
+            
+            ipfs.swarm.peers(function(err, response) {
+                if (err) {
+                    console.error(err);
+                } else {
+                    console.log("IPFS - connected to " + response.length + " peers.");
+                    console.log(response);
+                }
+            });
+
+            function listReports() {
+                var table = document.getElementById("reportTable");
+
+                for (i = reportCount - 1; i >= 0; i--) {
+                    var report = reportManagerContractInstance.getReport(i);
+                    console.log("Report content: " + report);
+
+                    var row = table.insertRow(table.rows.length);
+			        var cell = row.insertCell(0);
+                    var cellId = "cell" + i;
+                    cell.id = cellId
+  
+                    var video = $("<video controls/>");
+                    video.attr({width: 560, height: 315});
+                    video.append("<source src='https://ipfs.io/ipfs/" + report[0] + "' type='video/mp4'>");
+
+                    var title = $("<div id='reportTitle'>" + report[1] + "</div>");
+                    var description = $("<div id='reportDescription'>" + report[2] + "</div>");
+
+                    $('#' + cellId).append(video);
+                    $('#' + cellId).append(title);
+                    $('#' + cellId).append(description);
+                }
+            }
+
+            function upload() {
+                const reader = new FileReader();
+                reader.onloadend = function() {
+                    const buf = buffer.Buffer(reader.result)
+                    window.ipfs.files.add(buf, (err, result) => {
+                        if(err) {
+                            console.error('Error sending file to IPFS: ', err);
+                            return;
+                        }
+                        let url = `https://ipfs.io/ipfs/${result[0].hash}`
+                        console.log(`Url --> ${url}`)
+
+                        var title = document.getElementById("newReportTitle").value;
+                        var description = document.getElementById("newReportDescription").value;
+
+                        reportManagerContractInstance.createReport.sendTransaction(result[0].hash, title, description, "Some tags", 123, accountObject);
+                    })
+                } 
+            
+                const photo = document.getElementById("videofile");
+                reader.readAsArrayBuffer(photo.files[0]); 
+            }
+        </script>
+    </head>
+    <body>
+        <div id="monumentTitle">[ MONUMENT ]</div>
+        <br/>
+        
+        <table id="reportTable" border="1" align="center">
+            <tr>
+                <td>
+                    <div id="newReportForm">
+                        <form action="/">
+                            Title: <input type="text" id="newReportTitle">
+                            <br/>
+                            <br/>
+                            Description: <input type="text" id="newReportDescription">
+                            <br/>
+                            <br/>
+                            <input type="file" name="videofile" id="videofile">
+                            <br/>
+                            <br/>
+                            <button type="button" onclick="upload()">Upload</button>
+                        </form>
+                    </div> 
+                </td>    
+            </tr>
+        </table>
+
+        <script type="text/javascript">
+            listReports();
+         </script>
+    </body>
+</html>

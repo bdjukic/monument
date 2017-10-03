@@ -1,0 +1,419 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		438F4F4B1F7A668700744BF5 /* web3.html in Resources */ = {isa = PBXBuildFile; fileRef = 438F4F4A1F7A668700744BF5 /* web3.html */; };
+		438F4F4D1F7A674800744BF5 /* web3.js in Resources */ = {isa = PBXBuildFile; fileRef = 438F4F4C1F7A674800744BF5 /* web3.js */; };
+		438F4F521F7AC29C00744BF5 /* ReportExplorerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438F4F511F7AC29C00744BF5 /* ReportExplorerViewController.swift */; };
+		438F4F541F7AE48900744BF5 /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438F4F531F7AE48900744BF5 /* WebViewViewController.swift */; };
+		43E87A301F797AAF00A97F88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E87A2F1F797AAF00A97F88 /* AppDelegate.swift */; };
+		43E87A351F797AAF00A97F88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43E87A331F797AAF00A97F88 /* Main.storyboard */; };
+		43E87A371F797AB000A97F88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43E87A361F797AB000A97F88 /* Assets.xcassets */; };
+		43E87A3A1F797AB000A97F88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43E87A381F797AB000A97F88 /* LaunchScreen.storyboard */; };
+		43E87A421F797BA400A97F88 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E87A411F797BA400A97F88 /* CameraViewController.swift */; };
+		43E87A451F797BDD00A97F88 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E87A441F797BDD00A97F88 /* AVFoundation.framework */; };
+		43E87A4E1F79B1C400A97F88 /* SwiftHex.framework in Copy IPFS dependencies */ = {isa = PBXBuildFile; fileRef = 43E87A471F79B1C300A97F88 /* SwiftHex.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		43E87A4F1F79B1C400A97F88 /* VarInt.framework in Copy IPFS dependencies */ = {isa = PBXBuildFile; fileRef = 43E87A481F79B1C300A97F88 /* VarInt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		43E87A501F79B1C400A97F88 /* SwiftIpfsApi.framework in Copy IPFS dependencies */ = {isa = PBXBuildFile; fileRef = 43E87A491F79B1C300A97F88 /* SwiftIpfsApi.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		43E87A511F79B1C400A97F88 /* SwiftBase58.framework in Copy IPFS dependencies */ = {isa = PBXBuildFile; fileRef = 43E87A4A1F79B1C300A97F88 /* SwiftBase58.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		43E87A521F79B1C400A97F88 /* SwiftMultiaddr.framework in Copy IPFS dependencies */ = {isa = PBXBuildFile; fileRef = 43E87A4B1F79B1C300A97F88 /* SwiftMultiaddr.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		43E87A531F79B1C400A97F88 /* SwiftMultihash.framework in Copy IPFS dependencies */ = {isa = PBXBuildFile; fileRef = 43E87A4C1F79B1C300A97F88 /* SwiftMultihash.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		43E87A541F79B1C400A97F88 /* SwiftGMP.framework in Copy IPFS dependencies */ = {isa = PBXBuildFile; fileRef = 43E87A4D1F79B1C400A97F88 /* SwiftGMP.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		43E87A551F79B2B500A97F88 /* SwiftBase58.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E87A4A1F79B1C300A97F88 /* SwiftBase58.framework */; };
+		43E87A561F79B2B500A97F88 /* SwiftGMP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E87A4D1F79B1C400A97F88 /* SwiftGMP.framework */; };
+		43E87A571F79B2B500A97F88 /* SwiftHex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E87A471F79B1C300A97F88 /* SwiftHex.framework */; };
+		43E87A581F79B2B500A97F88 /* SwiftIpfsApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E87A491F79B1C300A97F88 /* SwiftIpfsApi.framework */; };
+		43E87A591F79B2B500A97F88 /* SwiftMultiaddr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E87A4B1F79B1C300A97F88 /* SwiftMultiaddr.framework */; };
+		43E87A5A1F79B2B500A97F88 /* SwiftMultihash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E87A4C1F79B1C300A97F88 /* SwiftMultihash.framework */; };
+		43E87A5B1F79B2B500A97F88 /* VarInt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E87A481F79B1C300A97F88 /* VarInt.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		43E87A461F79B15900A97F88 /* Copy IPFS dependencies */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				43E87A4E1F79B1C400A97F88 /* SwiftHex.framework in Copy IPFS dependencies */,
+				43E87A4F1F79B1C400A97F88 /* VarInt.framework in Copy IPFS dependencies */,
+				43E87A501F79B1C400A97F88 /* SwiftIpfsApi.framework in Copy IPFS dependencies */,
+				43E87A511F79B1C400A97F88 /* SwiftBase58.framework in Copy IPFS dependencies */,
+				43E87A521F79B1C400A97F88 /* SwiftMultiaddr.framework in Copy IPFS dependencies */,
+				43E87A531F79B1C400A97F88 /* SwiftMultihash.framework in Copy IPFS dependencies */,
+				43E87A541F79B1C400A97F88 /* SwiftGMP.framework in Copy IPFS dependencies */,
+			);
+			name = "Copy IPFS dependencies";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		438F4F4A1F7A668700744BF5 /* web3.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = web3.html; sourceTree = "<group>"; };
+		438F4F4C1F7A674800744BF5 /* web3.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = web3.js; sourceTree = "<group>"; };
+		438F4F511F7AC29C00744BF5 /* ReportExplorerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportExplorerViewController.swift; sourceTree = "<group>"; };
+		438F4F531F7AE48900744BF5 /* WebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
+		43E87A2C1F797AAF00A97F88 /* monument-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "monument-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		43E87A2F1F797AAF00A97F88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		43E87A341F797AAF00A97F88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		43E87A361F797AB000A97F88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		43E87A391F797AB000A97F88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		43E87A3B1F797AB000A97F88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43E87A411F797BA400A97F88 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		43E87A441F797BDD00A97F88 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		43E87A471F79B1C300A97F88 /* SwiftHex.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftHex.framework; path = Carthage/Build/iOS/SwiftHex.framework; sourceTree = "<group>"; };
+		43E87A481F79B1C300A97F88 /* VarInt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VarInt.framework; path = Carthage/Build/iOS/VarInt.framework; sourceTree = "<group>"; };
+		43E87A491F79B1C300A97F88 /* SwiftIpfsApi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftIpfsApi.framework; path = Carthage/Build/iOS/SwiftIpfsApi.framework; sourceTree = "<group>"; };
+		43E87A4A1F79B1C300A97F88 /* SwiftBase58.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftBase58.framework; path = Carthage/Build/iOS/SwiftBase58.framework; sourceTree = "<group>"; };
+		43E87A4B1F79B1C300A97F88 /* SwiftMultiaddr.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftMultiaddr.framework; path = Carthage/Build/iOS/SwiftMultiaddr.framework; sourceTree = "<group>"; };
+		43E87A4C1F79B1C300A97F88 /* SwiftMultihash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftMultihash.framework; path = Carthage/Build/iOS/SwiftMultihash.framework; sourceTree = "<group>"; };
+		43E87A4D1F79B1C400A97F88 /* SwiftGMP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftGMP.framework; path = Carthage/Build/iOS/SwiftGMP.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		43E87A291F797AAF00A97F88 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43E87A551F79B2B500A97F88 /* SwiftBase58.framework in Frameworks */,
+				43E87A561F79B2B500A97F88 /* SwiftGMP.framework in Frameworks */,
+				43E87A571F79B2B500A97F88 /* SwiftHex.framework in Frameworks */,
+				43E87A581F79B2B500A97F88 /* SwiftIpfsApi.framework in Frameworks */,
+				43E87A591F79B2B500A97F88 /* SwiftMultiaddr.framework in Frameworks */,
+				43E87A5A1F79B2B500A97F88 /* SwiftMultihash.framework in Frameworks */,
+				43E87A5B1F79B2B500A97F88 /* VarInt.framework in Frameworks */,
+				43E87A451F797BDD00A97F88 /* AVFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		43E87A231F797AAF00A97F88 = {
+			isa = PBXGroup;
+			children = (
+				43E87A4A1F79B1C300A97F88 /* SwiftBase58.framework */,
+				43E87A4D1F79B1C400A97F88 /* SwiftGMP.framework */,
+				43E87A471F79B1C300A97F88 /* SwiftHex.framework */,
+				43E87A491F79B1C300A97F88 /* SwiftIpfsApi.framework */,
+				43E87A4B1F79B1C300A97F88 /* SwiftMultiaddr.framework */,
+				43E87A4C1F79B1C300A97F88 /* SwiftMultihash.framework */,
+				43E87A481F79B1C300A97F88 /* VarInt.framework */,
+				43E87A2E1F797AAF00A97F88 /* monument-ios */,
+				43E87A2D1F797AAF00A97F88 /* Products */,
+				43E87A431F797BDD00A97F88 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		43E87A2D1F797AAF00A97F88 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				43E87A2C1F797AAF00A97F88 /* monument-ios.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		43E87A2E1F797AAF00A97F88 /* monument-ios */ = {
+			isa = PBXGroup;
+			children = (
+				43E87A411F797BA400A97F88 /* CameraViewController.swift */,
+				438F4F511F7AC29C00744BF5 /* ReportExplorerViewController.swift */,
+				43E87A2F1F797AAF00A97F88 /* AppDelegate.swift */,
+				438F4F531F7AE48900744BF5 /* WebViewViewController.swift */,
+				43E87A331F797AAF00A97F88 /* Main.storyboard */,
+				43E87A361F797AB000A97F88 /* Assets.xcassets */,
+				43E87A381F797AB000A97F88 /* LaunchScreen.storyboard */,
+				43E87A3B1F797AB000A97F88 /* Info.plist */,
+				438F4F4A1F7A668700744BF5 /* web3.html */,
+				438F4F4C1F7A674800744BF5 /* web3.js */,
+			);
+			path = "monument-ios";
+			sourceTree = "<group>";
+		};
+		43E87A431F797BDD00A97F88 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				43E87A441F797BDD00A97F88 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		43E87A2B1F797AAF00A97F88 /* monument-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43E87A3E1F797AB000A97F88 /* Build configuration list for PBXNativeTarget "monument-ios" */;
+			buildPhases = (
+				43E87A281F797AAF00A97F88 /* Sources */,
+				43E87A291F797AAF00A97F88 /* Frameworks */,
+				43E87A2A1F797AAF00A97F88 /* Resources */,
+				43E87A461F79B15900A97F88 /* Copy IPFS dependencies */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "monument-ios";
+			productName = "monument-ios";
+			productReference = 43E87A2C1F797AAF00A97F88 /* monument-ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		43E87A241F797AAF00A97F88 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Bogdan Djukic";
+				TargetAttributes = {
+					43E87A2B1F797AAF00A97F88 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 43E87A271F797AAF00A97F88 /* Build configuration list for PBXProject "monument-ios" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 43E87A231F797AAF00A97F88;
+			productRefGroup = 43E87A2D1F797AAF00A97F88 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				43E87A2B1F797AAF00A97F88 /* monument-ios */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		43E87A2A1F797AAF00A97F88 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43E87A3A1F797AB000A97F88 /* LaunchScreen.storyboard in Resources */,
+				438F4F4D1F7A674800744BF5 /* web3.js in Resources */,
+				438F4F4B1F7A668700744BF5 /* web3.html in Resources */,
+				43E87A371F797AB000A97F88 /* Assets.xcassets in Resources */,
+				43E87A351F797AAF00A97F88 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		43E87A281F797AAF00A97F88 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				438F4F541F7AE48900744BF5 /* WebViewViewController.swift in Sources */,
+				438F4F521F7AC29C00744BF5 /* ReportExplorerViewController.swift in Sources */,
+				43E87A301F797AAF00A97F88 /* AppDelegate.swift in Sources */,
+				43E87A421F797BA400A97F88 /* CameraViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		43E87A331F797AAF00A97F88 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43E87A341F797AAF00A97F88 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		43E87A381F797AB000A97F88 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43E87A391F797AB000A97F88 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		43E87A3C1F797AB000A97F88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		43E87A3D1F797AB000A97F88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		43E87A3F1F797AB000A97F88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6NPXK34478;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "monument-ios/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ios.monument-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		43E87A401F797AB000A97F88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6NPXK34478;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "monument-ios/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ios.monument-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		43E87A271F797AAF00A97F88 /* Build configuration list for PBXProject "monument-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43E87A3C1F797AB000A97F88 /* Debug */,
+				43E87A3D1F797AB000A97F88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		43E87A3E1F797AB000A97F88 /* Build configuration list for PBXNativeTarget "monument-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43E87A3F1F797AB000A97F88 /* Debug */,
+				43E87A401F797AB000A97F88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 43E87A241F797AAF00A97F88 /* Project object */;
+}

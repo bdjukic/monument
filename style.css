@@ -1,0 +1,44 @@
+body {
+    background-color: black;
+}
+
+td {
+    border: none;
+}
+
+#monumentTitle {
+    font: 1em monospace;
+    color: #F5F4F4;
+    font-size: 400%;
+    text-align: center;
+}
+
+#newReportForm {
+    font: 1em monospace;
+    text-align: left;
+    color: #F5F4F4;
+}
+
+#reportTitle {
+    font: 1em monospace;
+    color: #F5F4F4;
+    padding-left: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 200%
+}
+
+#reportDescription {
+    font: 1em monospace;
+    color: #F5F4F4;
+    padding-left: 0px;
+    padding-bottom: 10px;
+    font-size: 130%
+}
+
+#reportTable {
+    border-collapse: separate;
+    border-width: 0;
+    border-color: black;
+    border-spacing: 20px;
+}
